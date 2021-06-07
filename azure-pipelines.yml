@@ -6,8 +6,7 @@
 trigger:
 - master
 
-pool:
-  vmImage: lalit-self-hosted-agent-pool
+pool: lalit-self-hosted-agent-pool
 
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
