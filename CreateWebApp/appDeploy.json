@@ -39,7 +39,7 @@
               "mode": "Incremental",
               "templateLink": {
                   "relativePath": "linkedStorageAccount.json",
-                  "contentVersion": "1.0.0.1"
+                  "contentVersion": "1.0.0.2"
               },
               "parameters": {
                   "storageAccountName": {
