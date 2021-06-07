@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool: lalit-self-hosted-agent-pool
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'azurermconn'
+    subscriptionId: '6a6d048f-0f2f-4920-b9ff-bd5e932263b9'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'lalitldprjrg'
+    location: 'East US'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/agblalit/skillsproject-repo/master/CreateWebApp/appDeploy.json'
+    overrideParameters: '-projectName lalitldprj'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
